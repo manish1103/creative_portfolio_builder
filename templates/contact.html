@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | Manish Sen Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #f9f9f9; font-family: 'Poppins', sans-serif; }
+    .contact-header {
+      background: linear-gradient(120deg, #007bff, #6610f2);
+      color: white;
+      text-align: center;
+      padding: 80px 0 60px 0;
+    }
+    .contact-card {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    .social-links a {
+      display: block;
+      margin: 6px 0;
+      color: #007bff;
+      text-decoration: none;
+    }
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+    footer { background: #222; color: white; padding: 20px; text-align: center; margin-top: 50px; }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="contact-header">
+  <h1>Contact Me</h1>
+  <p class="lead">Let's Connect and Create Something Amazing!</p>
+</div>
+
+<!-- Contact Section -->
+<div class="container mt-5 mb-5">
+  <div class="row g-5">
+    
+    <!-- Contact Details -->
+    <div class="col-md-5">
+      <div class="contact-card">
+        <h4>My Contact Details</h4>
+        <hr>
+        <p><b>📞 Phone:</b> <a href="tel:+918318249603">+91 8318249603</a></p>
+        <p><b>📧 Email:</b> <a href="mailto:manishsen9838@gmail.com">manishsen9838@gmail.com</a></p>
+        <p><b>🏠 Address:</b> Jhansi, Uttar Pradesh, India</p>
+
+        <div class="social-links mt-4">
+          <h5>🌐 Connect with me:</h5>
+          <a href="https://www.behance.net/manishsen16" target="_blank">Behance — @manishsen16</a>
+          <a href="https://github.com/manish1103" target="_blank">GitHub — @manish1103</a>
+          <a href="https://www.linkedin.com/in/manishsen9838/" target="_blank">LinkedIn — Manish Sen</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Message Form -->
+    <div class="col-md-7">
+      <div class="contact-card">
+        <h4>Send Me a Message</h4>
+        <hr>
+        <form method="POST" action="/contact">
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>© 2025 Manish Sen | Built with ❤️ using Flask & Bootstrap</p>
+</footer>
+
+</body>
+</html>

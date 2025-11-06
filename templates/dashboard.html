@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Admin Dashboard</h2>
+
+  {% if data %}
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped align-middle text-center shadow-sm">
+      <thead class="table-dark">
+        <tr>
+          <th style="width: 20%;">Name</th>
+          <th style="width: 25%;">Email</th>
+          <th>Message</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for c in data %}
+        <tr>
+          <td>{{ c.name }}</td>
+          <td>{{ c.email }}</td>
+          <td class="text-start">{{ c.message }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <div class="alert alert-info text-center mt-4">
+    📭 No messages found yet.
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

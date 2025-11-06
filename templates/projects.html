@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Projects | Manish Sen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+  <header>
+    <h1>My Projects</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/projects">Projects</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="projects-container">
+    <h2>Behance Projects</h2>
+    <div class="grid">
+      {% for bproj in behance_projects %}
+      <div class="card">
+        <img src="{{ bproj.image }}" alt="{{ bproj.title }}">
+        <h3>{{ bproj.title }}</h3>
+        <p style="color:#555;">{{ bproj.description }}</p>
+        <a href="{{ bproj.link }}" class="btn" target="_blank">View on Behance</a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="projects-container">
+    <h2>GitHub Repositories</h2>
+    <div class="grid">
+      {% if github_projects %}
+        {% for repo in github_projects %}
+        <div class="card">
+          <h3>{{ repo.name }}</h3>
+          <p style="color:#555;">{{ repo.description or "No description available." }}</p>
+          <a href="{{ repo.html_url }}" class="btn" target="_blank">View on GitHub</a>
+        </div>
+        {% endfor %}
+      {% else %}
+        <p style="padding:20px;">No GitHub repositories found (or GitHub API rate-limited). Check your username.</p>
+      {% endif %}
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Manish Sen | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
