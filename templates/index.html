@@ -107,16 +107,18 @@ function toggleMenu() {
 
     <!-- ===== GitHub Projects ===== -->
     <section id="projects">
-        <h2>💻 GitHub Projects</h2>
-        <div class="project-list">
-            {% for repo in github_repos %}
-            <a href="{{ repo.url }}" target="_blank" class="project-card">
-                <h4>{{ repo.name }}</h4>
-                <p>View on GitHub →</p>
-            </a>
-            {% endfor %}
-        </div>
-    </section>
+  <h2>💻 GitHub Projects</h2>
+  <div class="project-list">
+    {% for repo in github_projects %}
+    <a href="{{ repo.html_url }}" target="_blank" class="project-card">
+      <h4>{{ repo.name }}</h4>
+      <p>{{ repo.description if repo.description else "No description provided." }}</p>
+      <span class="btn-link">View on GitHub →</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
 
     <!-- ===== Behance Projects ===== -->
     <section id="behance">
