@@ -252,8 +252,58 @@ nav a:hover {
 
 .hamburger {
     display: none;
-    font-size: 1.6rem;
+    font-size: 1.6rem;/* ====== Project Card Hover Animation ====== */
+.project-card {
+  display: block;
+  text-decoration: none;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  color: #222;
+  transition: all 0.3s ease-in-out;
+}
+
+.project-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  background: #f8faff;
+}
+
+.project-card:hover h4 {
+  color: #0d6efd;
+}
+
+.project-card .btn-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #0d6efd;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .btn-link {
+  color: #6610f2;
+}
+
     cursor: pointer;
+}
+
+/* ====== Scroll Reveal Animation ====== */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional smooth fade for sections */
+section {
+  scroll-margin-top: 80px;
 }
 
 /* ===== Mobile Responsive ===== */
@@ -272,4 +322,60 @@ nav a:hover {
     .hamburger {
         display: block;
     }
+}
+/* ==== Section Header with "View All" ==== */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.section-header h2 {
+  color: #004aad;
+  font-weight: 700;
+}
+
+.view-all-btn {
+  background: #004aad;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s ease;
+}
+
+.view-all-btn:hover {
+  background: #0a58ca;
+}
+
+/* ==== Project Cards ==== */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 10px;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.project-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
 }

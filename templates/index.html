@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
     <script>
-        // 🌙 Toggle dark/light mode
+        // 🌙 Dark/Light Mode Toggle
         function toggleTheme() {
             const body = document.body;
             body.classList.toggle("dark-mode");
@@ -17,15 +17,14 @@
 
         window.onload = function() {
             const theme = localStorage.getItem("theme");
-            if (theme === "dark") {
-                document.body.classList.add("dark-mode");
-            }
+            if (theme === "dark") document.body.classList.add("dark-mode");
         };
     </script>
 </head>
+
 <body>
     
-    <!-- ===== Header with Hamburger ===== -->
+<!-- ===== HEADER ===== -->
 <header>
     <h1>Manish Sen</h1>
 
@@ -36,11 +35,9 @@
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-        <!-- ✅ Online Resume Link -->
         <a href="{{ url_for('static', filename='Manish_Sen_Resume.pdf') }}" target="_blank">View Resume</a>
     </nav>
 
-    <!-- Hamburger Button -->
     <div class="hamburger" onclick="toggleMenu()">☰</div>
 </header>
 
@@ -50,140 +47,137 @@ function toggleMenu() {
 }
 </script>
 
-    <!-- ===== About Section ===== -->
-    <section id="about">
+<!-- ===== ABOUT SECTION ===== -->
+<section id="about" class="reveal">
 	<img src="{{ url_for('static', filename='images/profile.png') }}" alt="Manish Sen" class="profile-pic">
-        <h2>Graphic Designer & Full Stack Developer</h2>
-        <p>Hi, I'm <strong>Manish Sen</strong> — a creative designer and developer from Jhansi, Uttar Pradesh.
-        I build beautiful websites, design posters, and develop backend systems using modern technologies.</p>
-		<a href="{{ url_for('static', filename='Manish_Sen_Resume.pdf') }}" download class="btn-download">
-    📄 Download Resume
-</a>
-
-    </section>
-
-    <!-- ===== Academics ===== -->
-    <section id="academics">
-        <h2>Academic Details</h2>
-        <ul>
-            <li><strong>MCA</strong> — LBSIMDS Lucknow</li>
-            <li><strong>B.Sc. (IT)</strong> — CSAIST Jhansi</li>
-            <li><strong>Graphic Design Training</strong> — 3 Months completed</li>
-        </ul>
-    </section>
-
-    <!-- ===== Experience ===== -->
-    <section id="experience">
-        <h2>Experience</h2>
-        <ul>
-            <li>6 Months at a DSA Loan Provider Office — Created Canva-based designs & social posts.</li>
-            <li>Internship: Hilo Technologies (Social Media Strategy)</li>
-            <li>Freelance Graphic & Web Designer — Built portfolio projects and client content.</li>
-        </ul>
-    </section>
-
-    <!-- ===== Skills ===== -->
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div>
-                <h3>Languages</h3>
-                <p>Java, Python, JavaScript, HTML, CSS</p>
-            </div>
-            <div>
-                <h3>Frameworks</h3>
-                <p>React, Flask, Laravel, Flutter</p>
-            </div>
-            <div>
-                <h3>Databases</h3>
-                <p>MySQL, MongoDB</p>
-            </div>
-            <div>
-                <h3>Tools & Design</h3>
-                <p>Git, Canva, Figma, Photoshop, Photopea</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== GitHub Projects ===== -->
-    <section id="projects">
-  <h2>💻 GitHub Projects</h2>
-  <div class="project-list">
-    {% for repo in github_projects %}
-    <a href="{{ repo.html_url }}" target="_blank" class="project-card">
-      <h4>{{ repo.name }}</h4>
-      <p>{{ repo.description if repo.description else "No description provided." }}</p>
-      <span class="btn-link">View on GitHub →</span>
+    <h2>Graphic Designer & Full Stack Developer</h2>
+    <p>Hi, I'm <strong>Manish Sen</strong> — a creative designer and developer from Jhansi, Uttar Pradesh.
+    I build beautiful websites, design posters, and develop backend systems using modern technologies.</p>
+	<a href="{{ url_for('static', filename='Manish_Sen_Resume.pdf') }}" download class="btn-download">
+        📄 Download Resume
     </a>
+</section>
+
+<!-- ===== ACADEMICS ===== -->
+<section id="academics" class="reveal">
+    <h2>Academic Details</h2>
+    <ul>
+        <li><strong>MCA</strong> — LBSIMDS Lucknow</li>
+        <li><strong>B.Sc. (IT)</strong> — CSAIST Jhansi</li>
+        <li><strong>Graphic Design Training</strong> — 3 Months completed</li>
+    </ul>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience" class="reveal">
+    <h2>Experience</h2>
+    <ul>
+        <li>6 Months at a DSA Loan Provider Office — Created Canva-based designs & social posts.</li>
+        <li>Internship: Hilo Technologies (Social Media Strategy)</li>
+        <li>Freelance Graphic & Web Designer — Built portfolio projects and client content.</li>
+    </ul>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills" class="reveal">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+        <div>
+            <h3>Languages</h3>
+            <p>Java, Python, JavaScript, HTML, CSS</p>
+        </div>
+        <div>
+            <h3>Frameworks</h3>
+            <p>React, Flask, Laravel, Flutter</p>
+        </div>
+        <div>
+            <h3>Databases</h3>
+            <p>MySQL, MongoDB</p>
+        </div>
+        <div>
+            <h3>Tools & Design</h3>
+            <p>Git, Canva, Figma, Photoshop, Photopea</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== GITHUB PROJECTS ===== -->
+<!-- ===== GitHub Projects ===== -->
+<section id="projects">
+  <div class="section-header">
+    <h2>💻 GitHub Projects</h2>
+    <a href="https://github.com/manish1103" target="_blank" class="view-all-btn">View All →</a>
+  </div>
+
+  <div class="project-grid">
+    {% for repo in github_projects %}
+    <div class="project-card">
+      <img src="https://opengraph.githubassets.com/1/{{ repo.full_name }}" 
+           alt="{{ repo.name }}" class="project-img">
+      <h4>{{ repo.name }}</h4>
+      <p>{{ repo.description if repo.description else "No description available." }}</p>
+      <a href="{{ repo.html_url }}" target="_blank" class="btn-link">View on GitHub →</a>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- ===== Behance Projects ===== -->
+<section id="behance">
+  <div class="section-header">
+    <h2>🎨 Behance Projects</h2>
+    <a href="https://www.behance.net/manishsen16" target="_blank" class="view-all-btn">View All →</a>
+  </div>
+
+  <div class="project-grid">
+    {% for project in behance_projects %}
+    <div class="project-card">
+      <img src="https://via.placeholder.com/400x250?text={{ project.title | urlencode }}" 
+           alt="{{ project.title }}" class="project-img">
+      <h4>{{ project.title }}</h4>
+      <p>{{ project.desc }}</p>
+      <a href="{{ project.url }}" target="_blank" class="btn-link">View on Behance →</a>
+    </div>
     {% endfor %}
   </div>
 </section>
 
 
-    <!-- ===== Behance Projects ===== -->
-    <section id="behance">
-        <h2>🎨 Behance Projects</h2>
-        <div class="project-list">
-            <div class="project-card">
-                <img src="https://via.placeholder.com/300x200" alt="School Poster" class="project-thumb">
-                <h4>School Advertising Poster</h4>
-                <p>A promotional school poster designed with bold visuals and a modern education theme.</p>
-                <a href="https://www.behance.net/gallery/229181937/school-advertising-poster" target="_blank">View on Behance →</a>
-            </div>
-
-            <div class="project-card">
-                <img src="https://via.placeholder.com/300x200" alt="Promotional Post" class="project-thumb">
-                <h4>Promotional Post</h4>
-                <p>Created using Photopea, this project highlights creative product marketing through visuals.</p>
-                <a href="https://www.behance.net/gallery/228352005/Promotional-Post" target="_blank">View on Behance →</a>
-            </div>
-
-            <div class="project-card">
-                <img src="https://via.placeholder.com/300x200" alt="Coffee Time" class="project-thumb">
-                <h4>It's Coffee Time</h4>
-                <p>Figma-based café poster design — cozy tones and typography to attract coffee lovers.</p>
-                <a href="https://www.behance.net/gallery/223576721/Its-Coffee-Time" target="_blank">View on Behance →</a>
-            </div>
-
-            <div class="project-card">
-                <img src="https://via.placeholder.com/300x200" alt="Portfolio" class="project-thumb">
-                <h4>Graphic Design Portfolio</h4>
-                <p>A complete showcase of my branding, posters, and digital layouts in one creative collection.</p>
-                <a href="https://www.behance.net/gallery/223485187/Graphic-Design-Portfolio-Manish-Sen" target="_blank">View on Behance →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== Contact ===== -->
-<section id="contact">
-    <h2>Contact</h2>
-
-    <p><strong>📞 Mobile:</strong> 
-        <a href="tel:+919838391973">+91 9838391973</a>
-    </p>
-
-    <p><strong>💬 WhatsApp:</strong> 
-        <a href="https://wa.me/919838391973?text=Hi%20Manish!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect." 
-           target="_blank">
-           Message me on WhatsApp
-        </a>
-    </p>
-
-    <p><strong>📧 Email:</strong> 
-        <a href="mailto:manishsen9838@gmail.com">manishsen9838@gmail.com</a>
-    </p>
-
-    <p><strong>🔗 LinkedIn:</strong> 
-        <a href="https://www.linkedin.com/in/manish-sen-a0a741192/" target="_blank">
-            linkedin.com/in/manish-sen-a0a741192
-        </a>
-    </p>
-
-    <p><strong>📍 Location:</strong> Jhansi, Uttar Pradesh</p>
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="reveal">
+  <h2>Contact</h2>
+  <p><strong>📞 Mobile:</strong> <a href="tel:+919838391973">+91 9838391973</a></p>
+  <p><strong>💬 WhatsApp:</strong> 
+    <a href="https://wa.me/919838391973?text=Hi%20Manish!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank">
+      Message me on WhatsApp
+    </a>
+  </p>
+  <p><strong>📧 Email:</strong> 
+    <a href="mailto:manishsen9838@gmail.com">manishsen9838@gmail.com</a></p>
+  <p><strong>🔗 LinkedIn:</strong> 
+    <a href="https://www.linkedin.com/in/manish-sen-a0a741192/" target="_blank">linkedin.com/in/manish-sen-a0a741192</a></p>
+  <p><strong>📍 Location:</strong> Jhansi, Uttar Pradesh</p>
 </section>
 
-    <footer>
-        <p>© 2025 Manish Sen | All Rights Reserved</p>
-    </footer>
+<footer>
+  <p>© 2025 Manish Sen | All Rights Reserved</p>
+</footer>
+
+<!-- ===== SCROLL REVEAL JS ===== -->
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  window.addEventListener('scroll', () => {
+    for (let i = 0; i < reveals.length; i++) {
+      const windowHeight = window.innerHeight;
+      const revealTop = reveals[i].getBoundingClientRect().top;
+      const revealPoint = 100;
+      if (revealTop < windowHeight - revealPoint)
+        reveals[i].classList.add('visible');
+      else
+        reveals[i].classList.remove('visible');
+    }
+  });
+</script>
+
 </body>
 </html>
